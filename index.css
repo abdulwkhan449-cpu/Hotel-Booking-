@@ -193,7 +193,7 @@ img {
 .hero__bg {
   position: absolute;
   inset: -10px;
-  background: url('https://picsum.photos/seed/hotelhero/1600/900') center/cover no-repeat;
+  background: url('./hero abnner.png') center/cover no-repeat;
   z-index: 0;
   animation: heroZoom 25s infinite alternate ease-in-out;
 }
