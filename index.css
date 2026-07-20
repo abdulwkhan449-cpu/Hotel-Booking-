@@ -548,93 +548,76 @@ img {
     padding: 0.7rem 1rem;
   }
 }
-/* ===== AMENITIES – CLEAN & ATTRACTIVE ===== */
+/* ===== AMENITIES ===== */
 .amenities {
-  background: #fff;
-  padding: 4.5rem 0;
+    background: #fff;
 }
 
 .amenities__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 960px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    text-align: center;
 }
 
 .amenity {
-  background: #f8f6f4;
-  padding: 2rem 1.5rem;
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 140px;
+    background: #f8f6f4;
+    padding: 1.8rem 0.5rem;
+    border-radius: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .amenity:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-  background: #ffffff;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .amenity i {
-  font-size: 2.8rem;
-  color: #d4a373;
-  margin-bottom: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.amenity:hover i {
-  transform: scale(1.1);
+    font-size: 2.8rem;
+    color: #d4a373;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .amenity span {
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #1e2b3c;
-  letter-spacing: 0.3px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1e2b3c;
 }
+
 
 /* ===== RESPONSIVE AMENITIES ===== */
 @media (max-width: 768px) {
-  .amenities__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  .amenity {
-    padding: 1.5rem 1rem;
-    min-height: 120px;
-  }
-  .amenity i {
-    font-size: 2.2rem;
-  }
-  .amenity span {
-    font-size: 0.95rem;
-  }
+    .amenities__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .amenity {
+        padding: 1.2rem 0.5rem;
+    }
+    .amenity i {
+        font-size: 2.2rem;
+    }
+    .amenity span {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .amenities__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  .amenity {
-    padding: 1.2rem 0.5rem;
-    min-height: 100px;
-    border-radius: 16px;
-  }
-  .amenity i {
-    font-size: 1.8rem;
-    margin-bottom: 0.4rem;
-  }
-  .amenity span {
-    font-size: 0.85rem;
-  }
+    .amenities__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    .amenity {
+        padding: 1rem 0.3rem;
+        border-radius: 16px;
+    }
+    .amenity i {
+        font-size: 1.8rem;
+    }
+    .amenity span {
+        font-size: 0.8rem;
+    }
 }
 
 /* ===== ROOMS ===== */
