@@ -35,64 +35,62 @@
     </div>
   </header>
 
-  <!-- ===== HERO (NEW DESIGN) ===== -->
-  <section class="hero" id="hero">
-    <div class="hero__overlay"></div>
-    <div class="hero__bg"></div>
-    <div class="container hero__content">
-      <div class="hero__text">
-        <h1 class="hero__title">FIND YOUR PERFECT STAY</h1>
-        <p class="hero__subtitle">
-          <span>Comfort.</span><span>Style.</span>
-        </p>
-        <p class="hero__tagline">Unforgettable Stays</p>
-        <p class="hero__description">
-          Discover the best hotels at the best prices.<br />
-          Book your perfect stay, anytime, anywhere.
-        </p>
-        <a href="#booking" class="btn btn--accent hero__cta">
-          <i class="fas fa-calendar-check"></i> Book Your Stay
-        </a>
-        <div class="hero__badges">
-          <span><i class="fas fa-hotel"></i> Best Hotels</span>
-          <span><i class="fas fa-tag"></i> Best Prices</span>
-          <span><i class="fas fa-lock"></i> Secure Booking</span>
-        </div>
+<!-- ===== HERO – EXACT AS YOUR IMAGE ===== -->
+<section class="hero" id="hero">
+  <div class="hero__overlay"></div>
+  <div class="hero__bg"></div>
+  <div class="container hero__content">
+    <div class="hero__text">
+      <h1 class="hero__title">FIND YOUR PERFECT STAY</h1>
+      <p class="hero__subtitle">Comfort: Style:</p>
+      <p class="hero__tagline">Unforgettable Stays</p>
+      <p class="hero__description">
+        Discover the best hotels at the best prices.<br />
+        Book your perfect stay, anytime, anywhere.
+      </p>
+      <a href="#booking" class="btn btn--accent hero__cta">
+        <i class="fas fa-calendar-check"></i> Book Your Stay
+      </a>
+      <div class="hero__badges">
+        <span><i class="fas fa-hotel"></i> Best Hotels</span>
+        <span><i class="fas fa-tag"></i> Best Prices</span>
+        <span><i class="fas fa-lock"></i> Secure Booking</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== BOOKING SECTION (MOVED FROM HERO) ===== -->
-  <section class="section booking-section" id="booking">
-    <div class="container">
-      <div class="booking-card">
-        <h2 class="booking-card__title">Check Availability</h2>
-        <form class="booking-form" id="bookingForm">
-          <div class="booking-form__group">
-            <label for="checkin"><i class="fas fa-calendar-check"></i> Check‑in</label>
-            <input type="date" id="checkin" required />
-          </div>
-          <div class="booking-form__group">
-            <label for="checkout"><i class="fas fa-calendar-times"></i> Check‑out</label>
-            <input type="date" id="checkout" required />
-          </div>
-          <div class="booking-form__group">
-            <label for="guests"><i class="fas fa-user-friends"></i> Guests</label>
-            <select id="guests">
-              <option value="1">1 Guest</option>
-              <option value="2" selected>2 Guests</option>
-              <option value="3">3 Guests</option>
-              <option value="4">4 Guests</option>
-              <option value="5">5 Guests</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn--accent">
-            <i class="fas fa-search"></i> Check Availability
-          </button>
-        </form>
-      </div>
+<!-- ===== BOOKING SECTION (improved) ===== -->
+<section class="section booking-section" id="booking">
+  <div class="container">
+    <div class="booking-card">
+      <h2 class="booking-card__title">Check Availability</h2>
+      <form class="booking-form" id="bookingForm">
+        <div class="booking-form__group">
+          <label for="checkin"><i class="fas fa-calendar-check"></i> Check-in</label>
+          <input type="date" id="checkin" placeholder="mm/dd/yyyy" required />
+        </div>
+        <div class="booking-form__group">
+          <label for="checkout"><i class="fas fa-calendar-times"></i> Check-out</label>
+          <input type="date" id="checkout" placeholder="mm/dd/yyyy" required />
+        </div>
+        <div class="booking-form__group">
+          <label for="guests"><i class="fas fa-user-friends"></i> Guests</label>
+          <select id="guests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--accent">
+          <i class="fas fa-search"></i> Check Availability
+        </button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ===== AMENITIES ===== -->
   <section class="section amenities" id="amenities">
