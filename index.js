@@ -167,7 +167,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.15, // triggers when 15% of the section is visible
+  threshold: 0.15,
 });
 
 sections.forEach(section => {
