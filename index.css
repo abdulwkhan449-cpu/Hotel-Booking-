@@ -1023,25 +1023,30 @@ img {
         display: flex;
     }
 
-    .hero__title {
-        font-size: 2.6rem;
-    }
-    .hero__subtitle {
-        font-size: 1.3rem;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-    }
-    .hero__tagline {
-        font-size: 2rem;
-    }
-    .hero__badges {
-        gap: 1rem;
-    }
-    .hero__badges span {
-        padding: 0.3rem 1rem;
-        font-size: 0.85rem;
-    }
-
+   .hero__text {
+  text-align: left;
+  margin: 0;
+}
+.hero__title {
+  font-size: 2.8rem;
+}
+.hero__subtitle {
+  font-size: 1.3rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.hero__tagline {
+  font-size: 2rem;
+}
+.hero__badges {
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.hero__badges span {
+  padding: 0.3rem 1.2rem;
+  font-size: 0.85rem;
+}
+    
     .booking-card {
         padding: 1.8rem 1.5rem;
     }
@@ -1107,15 +1112,15 @@ img {
 }
 
 @media (max-width: 480px) {
-    .hero__title {
-        font-size: 2rem;
-    }
-    .hero__tagline {
-        font-size: 1.6rem;
-    }
-    .hero__description {
-        font-size: 1rem;
-    }
+ .hero__title {
+  font-size: 2.2rem;
+}
+.hero__tagline {
+  font-size: 1.6rem;
+}
+.hero__description {
+  font-size: 1rem;
+}
     .booking-card {
         padding: 1.2rem;
     }
