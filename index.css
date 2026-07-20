@@ -179,204 +179,137 @@ img {
     transition: 0.3s;
 }
 
-/* ===== HERO – NEW STYLES ===== */
+/* ===== HERO – LEFT ALIGNED & PREMIUM ===== */
 .hero {
-    position: relative;
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
+  position: relative;
+  min-height: 80vh; /* slightly shorter */
+  display: flex;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
 }
 
 .hero__bg {
-    position: absolute;
-    inset: -10px;
-    background: url('https://picsum.photos/seed/hotelhero/1600/900') center/cover no-repeat;
-    z-index: 0;
-    animation: heroZoom 25s infinite alternate ease-in-out;
+  position: absolute;
+  inset: -10px;
+  background: url('https://picsum.photos/seed/hotelhero/1600/900') center/cover no-repeat;
+  z-index: 0;
+  animation: heroZoom 25s infinite alternate ease-in-out;
 }
 
 @keyframes heroZoom {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.15);
-    }
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
 }
 
+/* Gradient overlay – more elegant */
 .hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
 }
 
 .hero__content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 2rem 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 3rem 0;
 }
 
+/* LEFT ALIGNED TEXT */
 .hero__text {
-    max-width: 720px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 680px;
+  margin: 0;
+  text-align: left;
 }
 
 .hero__title {
-    font-size: 4rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 0.3rem;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-    opacity: 0;
-    animation: fadeUp 1s ease forwards;
+  font-size: 4.2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  line-height: 1.1;
 }
 
 .hero__subtitle {
-    font-size: 1.8rem;
-    font-weight: 300;
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.15s forwards;
+  font-size: 1.8rem;
+  font-weight: 300;
+  display: flex;
+  gap: 0.8rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.15s forwards;
 }
 .hero__subtitle span {
-    background: rgba(255,255,255,0.15);
-    padding: 0.1rem 1rem;
-    border-radius: 40px;
-    backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(4px);
+  padding: 0.1rem 1.2rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .hero__tagline {
-    font-size: 2.6rem;
-    font-weight: 700;
-    color: #d4a373;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    margin: 0.2rem 0 1rem;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.3s forwards;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #d4a373;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  margin: 0.3rem 0 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.3s forwards;
+  letter-spacing: 1px;
 }
 
 .hero__description {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-bottom: 2rem;
-    line-height: 1.7;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.45s forwards;
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 2.2rem;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.45s forwards;
+  max-width: 520px;
 }
 
 .hero__cta {
-    display: inline-block;
-    padding: 0.9rem 3rem;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.6s forwards;
+  display: inline-block;
+  padding: 1rem 3.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+  box-shadow: 0 8px 30px rgba(212, 163, 115, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hero__cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(212, 163, 115, 0.6);
 }
 
 .hero__badges {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.75s forwards;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.75s forwards;
 }
 .hero__badges span {
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(4px);
-    padding: 0.5rem 1.5rem;
-    border-radius: 40px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 1.8rem;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 .hero__badges i {
-    margin-right: 0.4rem;
-    color: #d4a373;
-}
-
-/* ===== BOOKING SECTION (NEW) ===== */
-.booking-section {
-    padding: 3rem 0 4rem;
-    background: #f8f6f4;
-}
-
-.booking-card {
-    max-width: 880px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 28px;
-    padding: 2.5rem 3rem;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
-    text-align: center;
-}
-
-.booking-card__title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #1e2b3c;
-    margin-bottom: 1.8rem;
-}
-
-.booking-card .booking-form {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 1.5rem;
-    justify-content: center;
-    background: transparent;
-    backdrop-filter: none;
-    padding: 0;
-    border: none;
-    margin: 0;
-    animation: none;
-    opacity: 1;
-}
-
-.booking-card .booking-form__group {
-    flex: 1 1 150px;
-    text-align: left;
-}
-
-.booking-card .booking-form__group label {
-    color: #1e2b3c;
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-bottom: 0.3rem;
-    display: block;
-}
-
-.booking-card .booking-form__group input,
-.booking-card .booking-form__group select {
-    background: #f1ede8;
-    border: 1px solid #e0dbd5;
-    border-radius: 12px;
-    padding: 0.7rem 1rem;
-    width: 100%;
-    font-size: 1rem;
-    color: #222;
-    transition: border 0.3s;
-}
-.booking-card .booking-form__group input:focus,
-.booking-card .booking-form__group select:focus {
-    outline: none;
-    border-color: #d4a373;
-}
-
-.booking-card .booking-form button {
-    flex: 0 1 180px;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 14px;
+  color: #d4a373;
+  font-size: 1rem;
 }
 
 /* ===== AMENITIES ===== */
