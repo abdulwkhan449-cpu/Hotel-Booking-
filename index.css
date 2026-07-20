@@ -312,7 +312,6 @@ img {
   font-size: 1rem;
 }
 
-/* ===== AMENITIES ===== */
 /* ===== BOOKING SECTION – ATTRACTIVE ===== */
 .booking-section {
   padding: 4rem 0 5rem;
@@ -485,7 +484,6 @@ img {
     padding: 0.7rem 1rem;
   }
 }
-
 /* ===== ROOMS ===== */
 .rooms__grid {
     display: grid;
