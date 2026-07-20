@@ -345,6 +345,24 @@ img {
     font-size: 1rem;
   }
 }
+.hero__badges span {
+  /* existing styles */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero__badges span:hover {
+  background: rgba(212, 163, 115, 0.25);
+  border-color: #d4a373;
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.3);
+}
+
+/* Optional: make the icon inside also pop */
+.hero__badges span:hover i {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(212, 163, 115, 0.6);
+}
 
 @media (max-width: 480px) {
   .hero__title {
