@@ -198,11 +198,12 @@ img {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 300px;
   display: flex;
   align-items: center;
   color: #fff;
   overflow: hidden;
+  mardin-bottom:50px;
 }
 .hero__bg {
   position: absolute;
