@@ -1,6 +1,6 @@
 /* ===== OFFERS PAGE SPECIFIC STYLES ===== */
 
-/* ---- Hero ---- */
+/* ---- Hero - NO GAP (removed top margin) ---- */
 .offers-hero {
   position: relative;
   min-height: 40vh;
@@ -9,8 +9,8 @@
   color: #fff;
   background: url('./hero abnner.png') center/cover no-repeat;
   background-attachment: fixed;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 0;           /* NO GAP - removed 50px top margin */
+  margin-bottom: 50px;     /* Keep bottom margin for spacing below hero */
 }
 .offers-hero::before {
   content: '';
@@ -232,7 +232,7 @@
   .offers-hero {
     min-height: 30vh;
     background-attachment: scroll;
-    margin-top: 30px;
+    margin-top: 0;          /* NO GAP on tablet */
     margin-bottom: 30px;
   }
   .offers-hero h1 {
@@ -268,7 +268,7 @@
 @media (max-width: 480px) {
   .offers-hero {
     min-height: 25vh;
-    margin-top: 20px;
+    margin-top: 0;          /* NO GAP on mobile */
     margin-bottom: 20px;
   }
   .offers-hero h1 {
