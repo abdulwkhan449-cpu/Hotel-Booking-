@@ -1,0 +1,245 @@
+/* ===== DINING PAGE SPECIFIC STYLES ===== */
+
+/* ---- Hero ---- */
+.dining-hero {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: url('./dinning1.png') center/cover no-repeat;
+  background-attachment: fixed;
+}
+.dining-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
+}
+.dining-hero .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.dining-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.dining-hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---- Restaurant Overview ---- */
+.dining-overview__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.dining-overview__image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.dining-overview__content .section__title {
+  margin-bottom: 0.3rem;
+}
+
+/* ---- Dining Experiences Grid ---- */
+.dining-experiences__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.dining-card {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.dining-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.dining-card--featured {
+  border: 2px solid #d4a373;
+  background: #fffbf8;
+}
+.dining-card i {
+  font-size: 2.8rem;
+  color: #d4a373;
+  margin-bottom: 0.8rem;
+}
+.dining-card h3 {
+  font-size: 1.4rem;
+  color: #1e2b3c;
+  margin-bottom: 0.5rem;
+}
+.dining-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+.dining-card__time {
+  display: inline-block;
+  background: #f0edea;
+  padding: 0.2rem 1rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1e2b3c;
+  margin-bottom: 1.2rem;
+}
+.dining-card .btn {
+  font-size: 0.9rem;
+}
+
+/* ---- Chef's Special ---- */
+.chefs-special {
+  background: #fff;
+}
+.chefs-special__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.chefs-special__content {
+  padding: 1rem;
+}
+.chefs-special__badge {
+  display: inline-block;
+  background: #d4a373;
+  color: #fff;
+  padding: 0.2rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+}
+.chefs-special__content h2 {
+  font-size: 2.4rem;
+  color: #1e2b3c;
+  margin-bottom: 0.2rem;
+}
+.chefs-special__content h3 {
+  font-size: 1.6rem;
+  color: #d4a373;
+  margin-bottom: 1rem;
+}
+.chefs-special__content p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+}
+.chefs-special__image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* ---- Testimonials ---- */
+.dining-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.testimonial-card {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  transition: transform 0.3s;
+}
+.testimonial-card:hover {
+  transform: scale(1.02);
+}
+.testimonial-card__stars {
+  color: #f4b942;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+.testimonial-card p {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+.testimonial-card__author {
+  font-weight: 600;
+  color: #1e2b3c;
+}
+
+/* ---- Active nav link ---- */
+.nav__list a.active {
+  color: #d4a373;
+  font-weight: 600;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .dining-hero {
+    min-height: 30vh;
+    background-attachment: scroll;
+  }
+  .dining-hero h1 {
+    font-size: 2.5rem;
+  }
+  .dining-hero p {
+    font-size: 1.1rem;
+  }
+
+  .dining-overview__inner,
+  .chefs-special__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .dining-overview__image img,
+  .chefs-special__image img {
+    height: 250px;
+  }
+  .dining-overview__content .section__title {
+    text-align: center;
+  }
+  .dining-overview__content .section__subtitle {
+    text-align: center;
+  }
+  .chefs-special__content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dining-hero {
+    min-height: 25vh;
+  }
+  .dining-hero h1 {
+    font-size: 2rem;
+  }
+  .dining-hero p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  .dining-experiences__grid {
+    grid-template-columns: 1fr;
+  }
+  .dining-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}
