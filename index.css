@@ -1019,7 +1019,7 @@ img {
   border-top: 1px solid #eee;
 }
 .sticky-cta .btn {
-  display: block;
+  display: none ;
   width: 100%;
   text-align: center;
   font-size: 1.1rem;
