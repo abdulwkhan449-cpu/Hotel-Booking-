@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Hotel · Dining</title>
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Shared global styles -->
+  <link rel="stylesheet" href="index.css" />
+  <!-- Page‑specific styles -->
+  <link rel="stylesheet" href="dining.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="./index.html" class="logo">
+        <i class="fas fa-hotel"></i> Grand Hotel
+      </a>
+      <nav class="nav" id="mainNav">
+        <ul class="nav__list">
+          <li><a href="./rooms.html"><i class="fas fa-door-open"></i> Rooms</a></li>
+          <li><a href="./dining.html" class="active"><i class="fas fa-utensils"></i> Dining</a></li>
+          <li><a href="./packages.html"><i class="fas fa-tags"></i> Offers</a></li>
+          <li><a href="./attractions.html"><i class="fas fa-map-marked-alt"></i> Attractions</a></li>
+          <li><a href="./gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+          <li><a href="./contact.html"><i class="fas fa-star"></i>Contact</a></li>
+        </ul>
+        <a href="#booking" class="btn btn--primary nav__cta"><i class="fas fa-calendar-check"></i> Book Now</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- ===== DINING HERO ===== -->
+  <section class="dining-hero">
+    <div class="container">
+      <h1>Exquisite Dining</h1>
+      <p>Savor the finest flavors in an elegant atmosphere.</p>
+    </div>
+  </section>
+
+  <!-- ===== RESTAURANT OVERVIEW ===== -->
+  <section class="section dining-overview">
+    <div class="container">
+      <div class="dining-overview__inner">
+        <div class="dining-overview__image">
+          <img src="./dinning1.png" alt="Grand Restaurant" />
+        </div>
+        <div class="dining-overview__content">
+          <h2 class="section__title" style="text-align: left;">The Grand Restaurant</h2>
+          <p class="section__subtitle" style="text-align: left; margin-bottom: 1.5rem;">
+            A culinary journey blending tradition with innovation.
+          </p>
+          <p style="color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+            Our award‑winning chefs craft every dish with the finest locally sourced ingredients. 
+            Enjoy breathtaking views, impeccable service, and a menu that changes with the seasons.
+          </p>
+          <a href="#" class="btn btn--accent"><i class="fas fa-book-open"></i> View Full Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DINING EXPERIENCES ===== -->
+  <section class="section dining-experiences" style="background: #f8f6f4;">
+    <div class="container">
+      <h2 class="section__title">Dining Experiences</h2>
+      <p class="section__subtitle">From casual bites to gourmet feasts.</p>
+      <div class="dining-experiences__grid">
+        <!-- Breakfast -->
+        <div class="dining-card">
+          <i class="fas fa-mug-saucer"></i>
+          <h3>Breakfast Buffet</h3>
+          <p>Start your day with a lavish spread of fresh pastries, tropical fruits, and made‑to‑order omelets.</p>
+          <span class="dining-card__time">7:00 – 10:30 AM</span>
+          <a href="#" class="btn btn--outline">View Menu</a>
+        </div>
+        <!-- Lunch -->
+        <div class="dining-card">
+          <i class="fas fa-utensils"></i>
+          <h3>À la Carte Lunch</h3>
+          <p>Seasonal dishes featuring local seafood, artisanal pastas, and vibrant salads.</p>
+          <span class="dining-card__time">12:00 – 3:00 PM</span>
+          <a href="#" class="btn btn--outline">View Menu</a>
+        </div>
+        <!-- Dinner -->
+        <div class="dining-card dining-card--featured">
+          <i class="fas fa-wine-glass-alt"></i>
+          <h3>Fine Dining Dinner</h3>
+          <p>An unforgettable multi‑course tasting menu, paired with the finest wines from our cellar.</p>
+          <span class="dining-card__time">6:00 – 11:00 PM</span>
+          <a href="#" class="btn btn--accent">Reserve a Table</a>
+        </div>
+        <!-- Bar & Lounge -->
+        <div class="dining-card">
+          <i class="fas fa-cocktail"></i>
+          <h3>Bar & Lounge</h3>
+          <p>Signature cocktails, premium spirits, and light bites in a sophisticated setting.</p>
+          <span class="dining-card__time">4:00 PM – 1:00 AM</span>
+          <a href="#" class="btn btn--outline">View Drinks</a>
+        </div>
+        <!-- Afternoon Tea -->
+        <div class="dining-card">
+          <i class="fas fa-coffee"></i>
+          <h3>Afternoon Tea</h3>
+          <p>Indulge in a classic tradition with delicate sandwiches, scones, and fine teas.</p>
+          <span class="dining-card__time">2:30 – 5:00 PM</span>
+          <a href="#" class="btn btn--outline">Book Now</a>
+        </div>
+        <!-- Private Dining -->
+        <div class="dining-card">
+          <i class="fas fa-people-arrows"></i>
+          <h3>Private Dining</h3>
+          <p>Exclusive rooms for celebrations, business dinners, and intimate gatherings.</p>
+          <span class="dining-card__time">By reservation</span>
+          <a href="#" class="btn btn--outline">Inquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHEF’S SPECIAL ===== -->
+  <section class="section chefs-special">
+    <div class="container chefs-special__inner">
+      <div class="chefs-special__content">
+        <span class="chefs-special__badge">Chef’s Recommendation</span>
+        <h2>Signature Dish</h2>
+        <h3>Grilled Lobster with Saffron Risotto</h3>
+        <p>
+          Fresh Atlantic lobster, grilled to perfection, served on a bed of creamy saffron risotto 
+          with a hint of lemon and fresh herbs. Paired with a crisp Chardonnay.
+        </p>
+        <a href="#" class="btn btn--accent"><i class="fas fa-utensils"></i> Order Now</a>
+      </div>
+      <div class="chefs-special__image">
+        <img src="./dinning1.png" alt="Signature Dish" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS (dining specific) ===== -->
+  <section class="section dining-testimonials" style="background: #f1ede8;">
+    <div class="container">
+      <h2 class="section__title">What Our Guests Say</h2>
+      <div class="dining-testimonials__grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"The dinner tasting menu was absolutely divine. Every course was a work of art."</p>
+          <div class="testimonial-card__author">— Maria S.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"The breakfast buffet is the best I’ve ever had – so much variety and everything fresh."</p>
+          <div class="testimonial-card__author">— James T.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>"Amazing wine selection and the bar staff were incredibly knowledgeable."</p>
+          <div class="testimonial-card__author">— Emily R.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="section stats">
+    <div class="container stats__grid">
+      <div class="stat"><i class="fas fa-calendar-alt"></i><span class="stat__number">12+</span><span class="stat__label">Years of Excellence</span></div>
+      <div class="stat"><i class="fas fa-smile"></i><span class="stat__number">5,000+</span><span class="stat__label">Happy Guests</span></div>
+      <div class="stat"><i class="fas fa-trophy"></i><span class="stat__number">50+</span><span class="stat__label">Awards Won</span></div>
+      <div class="stat"><i class="fas fa-headset"></i><span class="stat__number">24/7</span><span class="stat__label">Guest Support</span></div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="section newsletter">
+    <div class="container newsletter__inner">
+      <h2><i class="fas fa-envelope-open-text"></i> Subscribe for Exclusive Offers</h2>
+      <p>Get 10% off your first booking and receive travel tips.</p>
+      <form class="newsletter__form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" id="newsletterEmail" required />
+        <button type="submit" class="btn btn--accent"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </form>
+      <span class="newsletter__feedback" id="newsletterFeedback"></span>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <h3><i class="fas fa-hotel"></i> Grand Hotel</h3>
+        <p><i class="fas fa-map-pin"></i> 123 Luxury Avenue, Downtown, City 10001</p>
+        <p><i class="fas fa-phone"></i> +1 (555) 123‑4567</p>
+        <p><i class="fas fa-envelope"></i> info@grandhotel.com</p>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="./rooms.html"><i class="fas fa-chevron-right"></i> Rooms</a></li>
+          <li><a href="./dining.html"><i class="fas fa-chevron-right"></i> Dining</a></li>
+          <li><a href="./packages.html"><i class="fas fa-chevron-right"></i> Offers</a></li>
+          <li><a href="./attractions.html"><i class="fas fa-chevron-right"></i> Attractions</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Follow Us</h4>
+        <div class="footer__social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="footer__copy">&copy; 2026 Grand Hotel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- ===== STICKY MOBILE CTA ===== -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#booking" class="btn btn--accent"><i class="fas fa-calendar-check"></i> Book Now</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+  <script src="dining.js"></script>
+</body>
+</html>
