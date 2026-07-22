@@ -6,14 +6,14 @@
   <title>Grand Hotel · Our Rooms</title>
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- Shared global styles (same as home) -->
+  <!-- Shared global styles -->
   <link rel="stylesheet" href="index.css" />
   <!-- Page‑specific styles -->
   <link rel="stylesheet" href="rooms.css" />
 </head>
 <body>
 
-  <!-- ===== HEADER (same as home) ===== -->
+  <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="container header__inner">
       <a href="./index.html" class="logo">
@@ -47,39 +47,8 @@
     </div>
   </section>
 
-  <!-- ===== FILTER BAR ===== -->
-  <section class="filter-bar">
-    <div class="container">
-      <div class="filter-bar__group">
-        <label for="roomType"><i class="fas fa-bed"></i> Room Type</label>
-        <select id="roomType">
-          <option value="all">All</option>
-          <option value="standard">Standard</option>
-          <option value="deluxe">Deluxe</option>
-          <option value="suite">Suite</option>
-          <option value="family">Family</option>
-        </select>
-        <label for="priceRange"><i class="fas fa-tag"></i> Max Price</label>
-        <select id="priceRange">
-          <option value="all">All</option>
-          <option value="3000">Under PKR 3,000</option>
-          <option value="5000">Under PKR 5,000</option>
-          <option value="8000">Under PKR 8,000</option>
-        </select>
-        <label for="sortBy"><i class="fas fa-sort"></i> Sort</label>
-        <select id="sortBy">
-          <option value="price-asc">Price: Low → High</option>
-          <option value="price-desc">Price: High → Low</option>
-          <option value="name">Name A → Z</option>
-        </select>
-      </div>
-      <button class="btn btn--accent" id="filterBtn"><i class="fas fa-sliders-h"></i> Apply</button>
-      <button class="btn btn--outline" id="resetBtn"><i class="fas fa-undo"></i> Reset</button>
-    </div>
-  </section>
-
   <!-- ===== ROOMS GRID ===== -->
-  <section class="section rooms" style="padding-top: 0;">
+  <section class="section rooms" style="padding-top: 1rem;">
     <div class="container">
       <div class="rooms__grid" id="roomsGrid">
         <!-- Room 1: Standard -->
@@ -237,7 +206,7 @@
     </div>
   </section>
 
-  <!-- ===== STATS (same as home) ===== -->
+  <!-- ===== STATS ===== -->
   <section class="section stats">
     <div class="container stats__grid">
       <div class="stat"><i class="fas fa-calendar-alt"></i><span class="stat__number">12+</span><span class="stat__label">Years of Excellence</span></div>
@@ -247,7 +216,7 @@
     </div>
   </section>
 
-  <!-- ===== NEWSLETTER (same as home) ===== -->
+  <!-- ===== NEWSLETTER ===== -->
   <section class="section newsletter">
     <div class="container newsletter__inner">
       <h2><i class="fas fa-envelope-open-text"></i> Subscribe for Exclusive Offers</h2>
@@ -260,7 +229,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER (same as home) ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer" id="contact">
     <div class="container footer__inner">
       <div class="footer__col">
@@ -300,7 +269,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="index.js"></script>   <!-- shared JS (nav, lightbox, reviews, newsletter, etc.) -->
-  <script src="rooms.js"></script>   <!-- page‑specific filtering -->
+  <script src="index.js"></script>
+  <script src="rooms.js"></script>
 </body>
 </html>
