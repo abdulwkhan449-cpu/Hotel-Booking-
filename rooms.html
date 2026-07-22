@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grand Hotel · Rooms</title>
-  <!-- FontAwesome 6 (Free) -->
+  <title>Grand Hotel · Our Rooms</title>
+  <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- Base styles (shared with homepage) -->
+  <!-- Shared global styles (same as home) -->
   <link rel="stylesheet" href="index.css" />
-  <!-- Rooms-specific styles -->
+  <!-- Page‑specific styles -->
   <link rel="stylesheet" href="rooms.css" />
 </head>
 <body>
 
-  <!-- ===== HEADER (identical to homepage, with "Rooms" active) ===== -->
+  <!-- ===== HEADER (same as home) ===== -->
   <header class="header">
     <div class="container header__inner">
       <a href="./index.html" class="logo">
@@ -21,7 +21,7 @@
       </a>
       <nav class="nav" id="mainNav">
         <ul class="nav__list">
-          <li><a href="./rooms.html" class="nav__link--active"><i class="fas fa-door-open"></i> Rooms</a></li>
+          <li><a href="./rooms.html" class="active"><i class="fas fa-door-open"></i> Rooms</a></li>
           <li><a href="./dining.html"><i class="fas fa-utensils"></i> Dining</a></li>
           <li><a href="./packages.html"><i class="fas fa-tags"></i> Offers</a></li>
           <li><a href="./attractions.html"><i class="fas fa-map-marked-alt"></i> Attractions</a></li>
@@ -37,100 +37,230 @@
       </button>
     </div>
   </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
 
-  <!-- ===== ROOMS HERO (smaller, with breadcrumb) ===== -->
-  <section class="hero rooms-hero">
-    <div class="hero__overlay"></div>
-    <div class="hero__bg" style="background-image: url('https://picsum.photos/seed/roomshero/1920/600');"></div>
-    <div class="container hero__content">
-      <div class="hero__text">
-        <p class="hero__breadcrumb"><a href="./index.html">Home</a> / Rooms</p>
-        <h1 class="hero__title">Our Rooms & Suites</h1>
-        <p class="hero__subtitle">Luxury, comfort, and style – choose your perfect stay.</p>
-        <a href="#rooms-grid" class="btn btn--accent hero__cta"><i class="fas fa-chevron-down"></i> Explore Rooms</a>
-      </div>
+  <!-- ===== ROOMS HERO ===== -->
+  <section class="rooms-hero">
+    <div class="container">
+      <h1>Our Rooms & Suites</h1>
+      <p>Experience comfort, luxury, and style in every room. Find your perfect stay.</p>
     </div>
   </section>
 
   <!-- ===== FILTER BAR ===== -->
-  <section class="section filter-section">
+  <section class="filter-bar">
     <div class="container">
-      <form class="filter-form" id="filterForm">
-        <div class="filter-group">
-          <label for="roomType"><i class="fas fa-bed"></i> Room Type</label>
-          <select id="roomType">
-            <option value="all">All Types</option>
-            <option value="suite">Suite</option>
-            <option value="family">Family</option>
-            <option value="penthouse">Penthouse</option>
-            <option value="deluxe">Deluxe</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label for="filterGuests"><i class="fas fa-user-friends"></i> Guests</label>
-          <select id="filterGuests">
-            <option value="1">1 Guest</option>
-            <option value="2" selected>2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5">5 Guests</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label for="priceRange"><i class="fas fa-tag"></i> Max Price (PKR)</label>
-          <input type="range" id="priceRange" min="20000" max="120000" value="120000" step="5000" />
-          <span id="priceDisplay">PKR 120,000</span>
-        </div>
-        <button type="submit" class="btn btn--primary"><i class="fas fa-sliders-h"></i> Filter</button>
-        <button type="reset" class="btn btn--outline" id="resetFilters"><i class="fas fa-undo"></i> Reset</button>
-      </form>
+      <div class="filter-bar__group">
+        <label for="roomType"><i class="fas fa-bed"></i> Room Type</label>
+        <select id="roomType">
+          <option value="all">All</option>
+          <option value="standard">Standard</option>
+          <option value="deluxe">Deluxe</option>
+          <option value="suite">Suite</option>
+          <option value="family">Family</option>
+        </select>
+        <label for="priceRange"><i class="fas fa-tag"></i> Max Price</label>
+        <select id="priceRange">
+          <option value="all">All</option>
+          <option value="3000">Under PKR 3,000</option>
+          <option value="5000">Under PKR 5,000</option>
+          <option value="8000">Under PKR 8,000</option>
+        </select>
+        <label for="sortBy"><i class="fas fa-sort"></i> Sort</label>
+        <select id="sortBy">
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="name">Name A → Z</option>
+        </select>
+      </div>
+      <button class="btn btn--accent" id="filterBtn"><i class="fas fa-sliders-h"></i> Apply</button>
+      <button class="btn btn--outline" id="resetBtn"><i class="fas fa-undo"></i> Reset</button>
     </div>
   </section>
 
   <!-- ===== ROOMS GRID ===== -->
-  <section class="section rooms-grid-section" id="rooms-grid">
+  <section class="section rooms" style="padding-top: 0;">
     <div class="container">
-      <h2 class="section__title">All Rooms</h2>
-      <p class="section__subtitle">Find your ideal room – each designed for your comfort.</p>
       <div class="rooms__grid" id="roomsGrid">
-        <!-- Room cards will be populated by JavaScript with data -->
+        <!-- Room 1: Standard -->
+        <div class="room-card" data-type="standard" data-price="2500" data-name="Standard Room">
+          <img src="./room12.png" alt="Standard Room" class="room-card__img" />
+          <div class="room-card__body">
+            <h3 class="room-card__title">Standard Room</h3>
+            <div class="room-card__icons">
+              <span><i class="fas fa-bed"></i> Queen</span>
+              <span><i class="fas fa-bath"></i> Shower</span>
+              <span><i class="fas fa-tv"></i> 42" TV</span>
+              <span><i class="fas fa-snowflake"></i> AC</span>
+            </div>
+            <p class="room-card__desc">Comfortable room with city view, ideal for business or leisure.</p>
+            <div class="room-card__footer">
+              <span class="room-card__price">PKR 2,500 <small>/ night</small></span>
+              <a href="#booking" class="btn btn--outline">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 2: Deluxe Suite -->
+        <div class="room-card" data-type="deluxe" data-price="3500" data-name="Deluxe Suite">
+          <img src="./room12.png" alt="Deluxe Suite" class="room-card__img" />
+          <div class="room-card__body">
+            <h3 class="room-card__title">Deluxe Suite</h3>
+            <div class="room-card__icons">
+              <span><i class="fas fa-bed"></i> King</span>
+              <span><i class="fas fa-bath"></i> Bathtub</span>
+              <span><i class="fas fa-tv"></i> 55" TV</span>
+              <span><i class="fas fa-snowflake"></i> AC</span>
+            </div>
+            <p class="room-card__desc">Spacious suite with city view and a private balcony.</p>
+            <div class="room-card__footer">
+              <span class="room-card__price">PKR 3,500 <small>/ night</small></span>
+              <a href="#booking" class="btn btn--outline">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 3: Family Room -->
+        <div class="room-card" data-type="family" data-price="4500" data-name="Family Room">
+          <img src="room2.png" alt="Family Room" class="room-card__img" />
+          <div class="room-card__body">
+            <h3 class="room-card__title">Family Room</h3>
+            <div class="room-card__icons">
+              <span><i class="fas fa-bed"></i> 2 Queen</span>
+              <span><i class="fas fa-bath"></i> Shower</span>
+              <span><i class="fas fa-tv"></i> 50" TV</span>
+              <span><i class="fas fa-snowflake"></i> AC</span>
+            </div>
+            <p class="room-card__desc">Two queen beds, extra space for kids, garden view.</p>
+            <div class="room-card__footer">
+              <span class="room-card__price">PKR 4,500 <small>/ night</small></span>
+              <a href="#booking" class="btn btn--outline">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 4: Penthouse -->
+        <div class="room-card" data-type="suite" data-price="5500" data-name="Penthouse">
+          <img src="room3.png" alt="Penthouse" class="room-card__img" />
+          <div class="room-card__body">
+            <h3 class="room-card__title">Penthouse</h3>
+            <div class="room-card__icons">
+              <span><i class="fas fa-bed"></i> King</span>
+              <span><i class="fas fa-hot-tub"></i> Hot Tub</span>
+              <span><i class="fas fa-tv"></i> 65" TV</span>
+              <span><i class="fas fa-snowflake"></i> AC</span>
+            </div>
+            <p class="room-card__desc">Top‑floor luxury with panoramic terrace and butler service.</p>
+            <div class="room-card__footer">
+              <span class="room-card__price">PKR 5,500 <small>/ night</small></span>
+              <a href="#booking" class="btn btn--outline">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 5: Superior Double -->
+        <div class="room-card" data-type="standard" data-price="2800" data-name="Superior Double">
+          <img src="./room12.png" alt="Superior Double" class="room-card__img" />
+          <div class="room-card__body">
+            <h3 class="room-card__title">Superior Double</h3>
+            <div class="room-card__icons">
+              <span><i class="fas fa-bed"></i> King</span>
+              <span><i class="fas fa-bath"></i> Shower</span>
+              <span><i class="fas fa-tv"></i> 48" TV</span>
+              <span><i class="fas fa-snowflake"></i> AC</span>
+            </div>
+            <p class="room-card__desc">Larger room with sitting area and city views.</p>
+            <div class="room-card__footer">
+              <span class="room-card__price">PKR 2,800 <small>/ night</small></span>
+              <a href="#booking" class="btn btn--outline">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 6: Junior Suite -->
+        <div class="room-card" data-type="suite" data-price="4200" data-name="Junior Suite">
+          <img src="room3.png" alt="Junior Suite" class="room-card__img" />
+          <div class="room-card__body">
+            <h3 class="room-card__title">Junior Suite</h3>
+            <div class="room-card__icons">
+              <span><i class="fas fa-bed"></i> King</span>
+              <span><i class="fas fa-bath"></i> Bathtub</span>
+              <span><i class="fas fa-tv"></i> 55" TV</span>
+              <span><i class="fas fa-snowflake"></i> AC</span>
+            </div>
+            <p class="room-card__desc">Spacious suite with separate living area and modern decor.</p>
+            <div class="room-card__footer">
+              <span class="room-card__price">PKR 4,200 <small>/ night</small></span>
+              <a href="#booking" class="btn btn--outline">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 7: Executive Twin -->
+        <div class="room-card" data-type="standard" data-price="3200" data-name="Executive Twin">
+          <img src="room2.png" alt="Executive Twin" class="room-card__img" />
+          <div class="room-card__body">
+            <h3 class="room-card__title">Executive Twin</h3>
+            <div class="room-card__icons">
+              <span><i class="fas fa-bed"></i> 2 Twin</span>
+              <span><i class="fas fa-bath"></i> Shower</span>
+              <span><i class="fas fa-tv"></i> 50" TV</span>
+              <span><i class="fas fa-snowflake"></i> AC</span>
+            </div>
+            <p class="room-card__desc">Two twin beds, ideal for colleagues or friends travelling together.</p>
+            <div class="room-card__footer">
+              <span class="room-card__price">PKR 3,200 <small>/ night</small></span>
+              <a href="#booking" class="btn btn--outline">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 8: Presidential Suite -->
+        <div class="room-card" data-type="suite" data-price="7500" data-name="Presidential Suite">
+          <img src="room3.png" alt="Presidential Suite" class="room-card__img" />
+          <div class="room-card__body">
+            <h3 class="room-card__title">Presidential Suite</h3>
+            <div class="room-card__icons">
+              <span><i class="fas fa-bed"></i> King</span>
+              <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+              <span><i class="fas fa-tv"></i> 75" TV</span>
+              <span><i class="fas fa-snowflake"></i> AC</span>
+            </div>
+            <p class="room-card__desc">Ultimate luxury with private terrace, dining area, and 24/7 butler.</p>
+            <div class="room-card__footer">
+              <span class="room-card__price">PKR 7,500 <small>/ night</small></span>
+              <a href="#booking" class="btn btn--outline">Book Now</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== BOOKING SECTION (reuse homepage style) ===== -->
-  <section class="section booking-section" id="booking">
-    <div class="container">
-      <div class="booking-card">
-        <h2 class="booking-card__title"><i class="fas fa-calendar-check"></i> Book Your Room</h2>
-        <form class="booking-form" id="bookingForm">
-          <div class="booking-form__group">
-            <label for="checkin"><i class="fas fa-calendar-check"></i> Check-in</label>
-            <input type="date" id="checkin" required />
-          </div>
-          <div class="booking-form__group">
-            <label for="checkout"><i class="fas fa-calendar-times"></i> Check-out</label>
-            <input type="date" id="checkout" required />
-          </div>
-          <div class="booking-form__group">
-            <label for="guests"><i class="fas fa-user-friends"></i> Guests</label>
-            <select id="guests">
-              <option value="1">1 Guest</option>
-              <option value="2" selected>2 Guests</option>
-              <option value="3">3 Guests</option>
-              <option value="4">4 Guests</option>
-              <option value="5">5 Guests</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn--accent">
-            <i class="fas fa-search"></i> Check Availability
-          </button>
-        </form>
-      </div>
+  <!-- ===== STATS (same as home) ===== -->
+  <section class="section stats">
+    <div class="container stats__grid">
+      <div class="stat"><i class="fas fa-calendar-alt"></i><span class="stat__number">12+</span><span class="stat__label">Years of Excellence</span></div>
+      <div class="stat"><i class="fas fa-smile"></i><span class="stat__number">5,000+</span><span class="stat__label">Happy Guests</span></div>
+      <div class="stat"><i class="fas fa-trophy"></i><span class="stat__number">50+</span><span class="stat__label">Awards Won</span></div>
+      <div class="stat"><i class="fas fa-headset"></i><span class="stat__number">24/7</span><span class="stat__label">Guest Support</span></div>
     </div>
   </section>
 
-  <!-- ===== FOOTER (identical to homepage) ===== -->
+  <!-- ===== NEWSLETTER (same as home) ===== -->
+  <section class="section newsletter">
+    <div class="container newsletter__inner">
+      <h2><i class="fas fa-envelope-open-text"></i> Subscribe for Exclusive Offers</h2>
+      <p>Get 10% off your first booking and receive travel tips.</p>
+      <form class="newsletter__form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" id="newsletterEmail" required />
+        <button type="submit" class="btn btn--accent"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </form>
+      <span class="newsletter__feedback" id="newsletterFeedback"></span>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (same as home) ===== -->
   <footer class="footer" id="contact">
     <div class="container footer__inner">
       <div class="footer__col">
@@ -169,7 +299,8 @@
     <a href="#booking" class="btn btn--accent"><i class="fas fa-calendar-check"></i> Book Now</a>
   </div>
 
-  <script src="index.js"></script>
-  <script src="rooms.js"></script>
+  <!-- Scripts -->
+  <script src="index.js"></script>   <!-- shared JS (nav, lightbox, reviews, newsletter, etc.) -->
+  <script src="rooms.js"></script>   <!-- page‑specific filtering -->
 </body>
 </html>
