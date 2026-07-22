@@ -11,37 +11,47 @@
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="container header__inner">
-      <a href="./index.html" class="logo">
-        <i class="fas fa-hotel"></i> Grand Hotel
+ <header class="header">
+  <div class="container header__inner">
+    <!-- Logo stays here (desktop & mobile) -->
+    <a href="./index.html" class="logo">
+      <i class="fas fa-hotel"></i> Grand Hotel
+    </a>
+
+    <!-- Navigation (popup on mobile) -->
+    <nav class="nav" id="mainNav">
+      <!-- LOGO REMOVED – no duplicate logo here -->
+
+      <ul class="nav__list">
+        <li><a href="./rooms.html"><i class="fas fa-door-open"></i> Rooms</a></li>
+        <li><a href="./dining.html"><i class="fas fa-utensils"></i> Dining</a></li>
+        <li><a href="./packages.html"><i class="fas fa-tags"></i> Offers</a></li>
+        <li><a href="./attractions.html"><i class="fas fa-map-marked-alt"></i> Attractions</a></li>
+        <li><a href="./gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="./contact.html"><i class="fas fa-star"></i>Contact</a></li>
+      </ul>
+
+      <a href="#booking" class="btn btn--primary nav__cta">
+        <i class="fas fa-calendar-check"></i> Book Now
       </a>
-      <nav class="nav" id="mainNav">
-        <!-- Logo inside nav – shown only on mobile (off‑canvas) -->
-        <div class="logo">
-          <i class="fas fa-hotel"></i> Grand Hotel
-        </div>
-        <ul class="nav__list">
-          <li><a href="./rooms.html"><i class="fas fa-door-open"></i> Rooms</a></li>
-          <li><a href="./dining.html"><i class="fas fa-utensils"></i> Dining</a></li>
-          <li><a href="./packages.html"><i class="fas fa-tags"></i> Offers</a></li>
-          <li><a href="./attractions.html"><i class="fas fa-map-marked-alt"></i> Attractions</a></li>
-          <li><a href="./gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-          <li><a href="./contact.html"><i class="fas fa-star"></i>Contact</a></li>
-        </ul>
-        <a href="#booking" class="btn btn--primary nav__cta"><i class="fas fa-calendar-check"></i> Book Now</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
+
+      <!-- CLOSE BUTTON – appears only in popup -->
+      <button class="nav__close" id="navClose" aria-label="Close menu">
+        <i class="fas fa-times"></i>
       </button>
-    </div>
-  </header>
+    </nav>
 
-  <!-- ===== NAV BACKDROP (mobile overlay) ===== -->
-  <div class="nav-backdrop" id="navBackdrop"></div>
+    <!-- Hamburger stays here, in the header (right side) -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span class="hamburger__bar"></span>
+      <span class="hamburger__bar"></span>
+      <span class="hamburger__bar"></span>
+    </button>
+  </div>
+</header>
 
+<!-- Backdrop for overlay (remains) -->
+<div class="nav-backdrop" id="navBackdrop"></div>
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
     <div class="hero__overlay"></div>
