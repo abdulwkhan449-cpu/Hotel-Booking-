@@ -25,7 +25,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== BOOKING FORM =====
+// ===== BOOKING FORM & PRICE UPDATE (PKR) =====
 const bookingForm = document.getElementById('bookingForm');
 const guestsSelect = document.getElementById('guests');
 
@@ -33,15 +33,17 @@ function updateRoomPrices(guestCount) {
   const cards = document.querySelectorAll('.room-card');
   cards.forEach((card, index) => {
     const base = parseInt(card.dataset.basePrice, 10);
-    const extra = Math.max(0, guestCount - 2) * 20;
+    // Extra charge per guest beyond 2: 2,000 PKR
+    const extra = Math.max(0, guestCount - 2) * 2000;
     const total = base + extra;
     const priceSpan = document.getElementById(`price-${index}`);
     if (priceSpan) {
-      priceSpan.innerHTML = `$${total} <small>/ night</small>`;
+      priceSpan.innerHTML = `PKR ${total.toLocaleString()} <small>/ night</small>`;
     }
   });
 }
 
+// Initial call with default 2 guests
 updateRoomPrices(2);
 
 guestsSelect.addEventListener('change', (e) => {
@@ -63,7 +65,7 @@ bookingForm.addEventListener('submit', (e) => {
     alert('Check-out must be after check-in.');
     return;
   }
-  alert(`✅ Searching availability for ${guests} guest(s) from ${checkin} to ${checkout}...\n(Backend integration would handle this.)`);
+  alert(`✅ Searching availability for ${guests} guest(s) from ${checkin} to ${checkout}...\n(Rooms will be priced in PKR.)`);
 });
 
 // ===== GALLERY LIGHTBOX =====
