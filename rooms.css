@@ -483,6 +483,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px,1fr));
   gap: 2.2rem;
+  margin-top:40px;
 }
 .room-card {
   background: #fff;
