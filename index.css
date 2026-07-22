@@ -1027,15 +1027,15 @@ img {
 }
 
 /* ============================================================
-   RESPONSIVE – MOBILE POPUP MODAL (no close button)
+   RESPONSIVE – MOBILE POPUP MODAL + HERO IMPROVEMENTS
    ============================================================ */
 @media (max-width: 768px) {
-  /* Show hamburger */
+  /* ---- Hamburger ---- */
   .hamburger {
     display: flex;
   }
 
-  /* Backdrop overlay */
+  /* ---- Backdrop ---- */
   .nav-backdrop {
     display: block;
     position: fixed;
@@ -1054,7 +1054,7 @@ img {
     visibility: visible;
   }
 
-  /* The popup card – centred */
+  /* ---- Popup menu ---- */
   .nav {
     position: fixed;
     top: 50%;
@@ -1086,7 +1086,6 @@ img {
     transform: translate(-50%, -50%) scale(1);
   }
 
-  /* Hero background inside card */
   .nav::before {
     content: '';
     position: absolute;
@@ -1103,12 +1102,10 @@ img {
     z-index: 1;
   }
 
-  /* Hide any leftover logo */
   .nav .logo {
     display: none !important;
   }
 
-  /* Nav list */
   .nav__list {
     flex-direction: column;
     gap: 0.3rem;
@@ -1142,7 +1139,6 @@ img {
     padding-left: 0.8rem;
   }
 
-  /* CTA button */
   .nav__cta {
     display: block !important;
     width: 100%;
@@ -1161,14 +1157,64 @@ img {
     background: #c08a5e;
   }
 
-  /* ---- Other responsive adjustments (unchanged) ---- */
-  .hero__text { text-align: left; }
-  .hero__title { font-size: 2.8rem; }
-  .hero__subtitle { font-size: 1.3rem; flex-wrap: wrap; gap: 0.4rem; }
-  .hero__tagline { font-size: 2rem; }
-  .hero__badges { gap: 1rem; justify-content: flex-start; }
-  .hero__badges span { padding: 0.3rem 1.2rem; font-size: 0.85rem; }
+  /* ---- HERO – MOBILE IMPROVEMENTS ---- */
+  .hero {
+    min-height: 90vh;
+    align-items: center;
+  }
+  .hero__content {
+    padding: 2rem 0;
+  }
+  .hero__text {
+    max-width: 100%;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  .hero__title {
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+  }
+  .hero__subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.2rem;
+    opacity: 0.9;
+  }
+  .hero__tagline {
+    font-size: 2.4rem;
+    margin: 0.4rem 0 1rem;
+    letter-spacing: 1px;
+  }
+  .hero__description {
+    font-size: 1rem;
+    max-width: 100%;
+    margin: 0 auto 1.8rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+  .hero__cta {
+    display: inline-block;
+    padding: 0.9rem 2.8rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .hero__badges {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  .hero__badges span {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .hero__badges i {
+    font-size: 0.9rem;
+  }
 
+  /* ---- Other responsive adjustments (unchanged) ---- */
   .booking-card { padding: 1.8rem 1.5rem; }
   .booking-card .booking-form { flex-direction: column; align-items: stretch; }
   .booking-card .booking-form button { flex: 1 1 auto; }
@@ -1191,10 +1237,37 @@ img {
   .back-to-top { bottom: 90px; right: 15px; width: 44px; height: 44px; }
 }
 
+/* ---- Extra small screens (≤480px) ---- */
 @media (max-width: 480px) {
-  .hero__title { font-size: 2.2rem; }
-  .hero__tagline { font-size: 1.6rem; }
-  .hero__description { font-size: 1rem; }
+  .hero {
+    min-height: 85vh;
+  }
+  .hero__title {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+  .hero__tagline {
+    font-size: 2rem;
+  }
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+  .hero__description {
+    font-size: 0.95rem;
+  }
+  .hero__cta {
+    padding: 0.8rem 2.2rem;
+    font-size: 1rem;
+  }
+  .hero__badges {
+    gap: 0.6rem;
+  }
+  .hero__badges span {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.9rem;
+  }
+
+  /* Keep other mobile tweaks */
   .booking-card { padding: 1.2rem; }
   .gallery__grid { grid-template-columns: 1fr 1fr; }
   .rooms__grid { grid-template-columns: 1fr; }
