@@ -1,14 +1,42 @@
-// ===== MOBILE NAV =====
+// ===== MOBILE NAV – PROFESSIONAL OFF-CANVAS =====
 const hamburger = document.getElementById('hamburger');
 const nav = document.querySelector('.nav');
+const backdrop = document.getElementById('navBackdrop');
 
-hamburger.addEventListener('click', () => {
-  nav.classList.toggle('nav--open');
-});
+function toggleMenu(force) {
+  // Determine if we should open or close
+  const isOpen = typeof force === 'boolean' ? force : !nav.classList.contains('nav--open');
 
-document.querySelectorAll('.nav__list a').forEach(link => {
-  link.addEventListener('click', () => nav.classList.remove('nav--open'));
-});
+  // Toggle classes
+  nav.classList.toggle('nav--open', isOpen);
+  if (hamburger) hamburger.classList.toggle('is-active', isOpen);
+  if (backdrop) backdrop.classList.toggle('is-visible', isOpen);
+
+  // Lock body scroll when menu is open
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+if (hamburger && nav) {
+  // Hamburger click – toggle
+  hamburger.addEventListener('click', () => toggleMenu());
+
+  // Backdrop click – close
+  if (backdrop) {
+    backdrop.addEventListener('click', () => toggleMenu(false));
+  }
+
+  // Nav links click – close
+  document.querySelectorAll('.nav__list a').forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+
+  // Escape key – close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('nav--open')) {
+      toggleMenu(false);
+    }
+  });
+}
 
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -31,6 +59,7 @@ const guestsSelect = document.getElementById('guests');
 
 function updateRoomPrices(guestCount) {
   const cards = document.querySelectorAll('.room-card');
+  if (!cards.length) return; // No rooms on this page
   cards.forEach((card, index) => {
     const base = parseInt(card.dataset.basePrice, 10);
     // Extra charge per guest beyond 2: 2,000 PKR
@@ -43,135 +72,149 @@ function updateRoomPrices(guestCount) {
   });
 }
 
-// Initial call with default 2 guests
-updateRoomPrices(2);
-
-guestsSelect.addEventListener('change', (e) => {
-  const val = parseInt(e.target.value, 10);
-  updateRoomPrices(val);
-});
-
-bookingForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const checkin = document.getElementById('checkin').value;
-  const checkout = document.getElementById('checkout').value;
-  const guests = document.getElementById('guests').value;
-
-  if (!checkin || !checkout) {
-    alert('Please select both check-in and check-out dates.');
-    return;
+if (guestsSelect) {
+  // Initial call – only if there are room cards
+  if (document.querySelectorAll('.room-card').length) {
+    updateRoomPrices(parseInt(guestsSelect.value, 10));
   }
-  if (new Date(checkin) >= new Date(checkout)) {
-    alert('Check-out must be after check-in.');
-    return;
-  }
-  alert(`✅ Searching availability for ${guests} guest(s) from ${checkin} to ${checkout}...\n(Rooms will be priced in PKR.)`);
-});
+  guestsSelect.addEventListener('change', (e) => {
+    const val = parseInt(e.target.value, 10);
+    updateRoomPrices(val);
+  });
+}
+
+if (bookingForm) {
+  bookingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const guests = document.getElementById('guests').value;
+
+    if (!checkin || !checkout) {
+      alert('Please select both check-in and check-out dates.');
+      return;
+    }
+    if (new Date(checkin) >= new Date(checkout)) {
+      alert('Check-out must be after check-in.');
+      return;
+    }
+    alert(`✅ Searching availability for ${guests} guest(s) from ${checkin} to ${checkout}...\n(Rooms will be priced in PKR.)`);
+  });
+}
 
 // ===== GALLERY LIGHTBOX =====
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
 
-document.querySelectorAll('.gallery__item').forEach(item => {
-  item.addEventListener('click', () => {
-    lightboxImg.src = item.dataset.img;
-    lightbox.classList.add('lightbox--open');
-    document.body.style.overflow = 'hidden';
+if (lightbox && lightboxImg && lightboxClose) {
+  document.querySelectorAll('.gallery__item').forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.dataset.img;
+      lightbox.classList.add('lightbox--open');
+      document.body.style.overflow = 'hidden';
+    });
   });
-});
 
-function closeLightbox() {
-  lightbox.classList.remove('lightbox--open');
-  document.body.style.overflow = '';
+  function closeLightbox() {
+    lightbox.classList.remove('lightbox--open');
+    document.body.style.overflow = '';
+  }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 }
-lightboxClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeLightbox();
-});
 
 // ===== REVIEWS CAROUSEL =====
 const reviews = document.querySelectorAll('.review-card');
 const prevBtn = document.getElementById('prevReview');
 const nextBtn = document.getElementById('nextReview');
-let currentReview = 0;
 
-function showReview(index) {
-  reviews.forEach((card, i) => {
-    card.classList.toggle('review-card--active', i === index);
+if (reviews.length && prevBtn && nextBtn) {
+  let currentReview = 0;
+
+  function showReview(index) {
+    reviews.forEach((card, i) => {
+      card.classList.toggle('review-card--active', i === index);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+    showReview(currentReview);
   });
-}
+  nextBtn.addEventListener('click', () => {
+    currentReview = (currentReview + 1) % reviews.length;
+    showReview(currentReview);
+  });
 
-prevBtn.addEventListener('click', () => {
-  currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-  showReview(currentReview);
-});
-nextBtn.addEventListener('click', () => {
-  currentReview = (currentReview + 1) % reviews.length;
-  showReview(currentReview);
-});
-
-let autoRotate = setInterval(() => {
-  currentReview = (currentReview + 1) % reviews.length;
-  showReview(currentReview);
-}, 5000);
-
-const carousel = document.getElementById('reviewsCarousel');
-carousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
-carousel.addEventListener('mouseleave', () => {
-  autoRotate = setInterval(() => {
+  let autoRotate = setInterval(() => {
     currentReview = (currentReview + 1) % reviews.length;
     showReview(currentReview);
   }, 5000);
-});
+
+  const carousel = document.getElementById('reviewsCarousel');
+  if (carousel) {
+    carousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
+    carousel.addEventListener('mouseleave', () => {
+      autoRotate = setInterval(() => {
+        currentReview = (currentReview + 1) % reviews.length;
+        showReview(currentReview);
+      }, 5000);
+    });
+  }
+}
 
 // ===== NEWSLETTER =====
 const newsletterForm = document.getElementById('newsletterForm');
 const newsletterFeedback = document.getElementById('newsletterFeedback');
 
-newsletterForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = document.getElementById('newsletterEmail').value.trim();
-  if (!email || !email.includes('@') || !email.includes('.')) {
-    newsletterFeedback.textContent = '❌ Please enter a valid email address.';
-    newsletterFeedback.style.color = '#c0392b';
-    return;
-  }
-  newsletterFeedback.textContent = '✅ Subscribed successfully! Check your inbox.';
-  newsletterFeedback.style.color = '#27ae60';
-  newsletterForm.reset();
-  setTimeout(() => { newsletterFeedback.textContent = ''; }, 5000);
-});
+if (newsletterForm && newsletterFeedback) {
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletterEmail').value.trim();
+    if (!email || !email.includes('@') || !email.includes('.')) {
+      newsletterFeedback.textContent = '❌ Please enter a valid email address.';
+      newsletterFeedback.style.color = '#c0392b';
+      return;
+    }
+    newsletterFeedback.textContent = '✅ Subscribed successfully! Check your inbox.';
+    newsletterFeedback.style.color = '#27ae60';
+    newsletterForm.reset();
+    setTimeout(() => { newsletterFeedback.textContent = ''; }, 5000);
+  });
+}
 
 // ===== BACK TO TOP =====
 const backToTopBtn = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    backToTopBtn.classList.add('back-to-top--visible');
-  } else {
-    backToTopBtn.classList.remove('back-to-top--visible');
-  }
-});
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('back-to-top--visible');
+    } else {
+      backToTopBtn.classList.remove('back-to-top--visible');
+    }
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // ===== SCROLL ANIMATIONS (Intersection Observer) =====
 const sections = document.querySelectorAll('.section');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('section--visible');
-    }
+if (sections.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section--visible');
+      }
+    });
+  }, {
+    threshold: 0.15,
   });
-}, {
-  threshold: 0.15,
-});
-
-sections.forEach(section => {
-  observer.observe(section);
-});
+  sections.forEach(section => observer.observe(section));
+}
