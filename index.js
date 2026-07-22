@@ -1,10 +1,9 @@
 // ============================================================
-//  MOBILE NAV – POPUP MODAL (with close button)
+//  MOBILE NAV – POPUP MODAL (no close button)
 // ============================================================
 const hamburger = document.getElementById('hamburger');
 const nav = document.querySelector('.nav');
 const backdrop = document.getElementById('navBackdrop');
-const closeBtn = document.getElementById('navClose'); // close button inside popup
 
 function toggleMenu(force) {
   const isOpen = typeof force === 'boolean' ? force : !nav.classList.contains('nav--open');
@@ -16,25 +15,13 @@ function toggleMenu(force) {
 }
 
 if (hamburger && nav) {
-  // Hamburger click – toggle
   hamburger.addEventListener('click', () => toggleMenu());
-
-  // Backdrop click – close
   if (backdrop) {
     backdrop.addEventListener('click', () => toggleMenu(false));
   }
-
-  // Close button click – close
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => toggleMenu(false));
-  }
-
-  // All nav links – close
   document.querySelectorAll('.nav__list a').forEach(link => {
     link.addEventListener('click', () => toggleMenu(false));
   });
-
-  // Escape key – close
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.classList.contains('nav--open')) {
       toggleMenu(false);
@@ -42,9 +29,8 @@ if (hamburger && nav) {
   });
 }
 
-
 // ============================================================
-//  SMOOTH SCROLL FOR ANCHOR LINKS
+//  SMOOTH SCROLL
 // ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -60,9 +46,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-
 // ============================================================
-//  BOOKING FORM & DYNAMIC ROOM PRICES (PKR)
+//  BOOKING FORM & PRICES
 // ============================================================
 const bookingForm = document.getElementById('bookingForm');
 const guestsSelect = document.getElementById('guests');
@@ -109,7 +94,6 @@ if (bookingForm) {
   });
 }
 
-
 // ============================================================
 //  GALLERY LIGHTBOX
 // ============================================================
@@ -138,7 +122,6 @@ if (lightbox && lightboxImg && lightboxClose) {
     if (e.key === 'Escape') closeLightbox();
   });
 }
-
 
 // ============================================================
 //  REVIEWS CAROUSEL
@@ -182,9 +165,8 @@ if (reviews.length && prevBtn && nextBtn) {
   }
 }
 
-
 // ============================================================
-//  NEWSLETTER SUBSCRIPTION
+//  NEWSLETTER
 // ============================================================
 const newsletterForm = document.getElementById('newsletterForm');
 const newsletterFeedback = document.getElementById('newsletterFeedback');
@@ -205,9 +187,8 @@ if (newsletterForm && newsletterFeedback) {
   });
 }
 
-
 // ============================================================
-//  BACK TO TOP BUTTON
+//  BACK TO TOP
 // ============================================================
 const backToTopBtn = document.getElementById('backToTop');
 if (backToTopBtn) {
@@ -223,9 +204,8 @@ if (backToTopBtn) {
   });
 }
 
-
 // ============================================================
-//  SCROLL ANIMATIONS (Intersection Observer)
+//  SCROLL ANIMATIONS
 // ============================================================
 const sections = document.querySelectorAll('.section');
 if (sections.length) {
@@ -235,8 +215,6 @@ if (sections.length) {
         entry.target.classList.add('section--visible');
       }
     });
-  }, {
-    threshold: 0.15,
-  });
+  }, { threshold: 0.15 });
   sections.forEach(section => observer.observe(section));
 }
