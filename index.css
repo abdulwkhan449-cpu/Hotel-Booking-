@@ -1241,139 +1241,160 @@ img {
     }
 
     /* Backdrop overlay */
-    .nav-backdrop {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        z-index: 99;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.35s ease, visibility 0.35s ease;
-        cursor: pointer;
-    }
+   @media (max-width: 768px) {
+  /* ---- Overlay (backdrop) ---- */
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  .nav-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
 
-    .nav-backdrop.is-visible {
-        opacity: 1;
-        visibility: visible;
-    }
+  /* ---- The popup card ---- */
+  .nav {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.92);
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    padding: 2rem 1.8rem 1.8rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 32px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 
-    /* The nav panel – slides in from the right */
-    .nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 82%;
-        max-width: 340px;
-        background: #ffffff;
-        box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
-        z-index: 100;
-        padding: 1.8rem 1.8rem 2rem;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex !important;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 0.5rem;
-        border: none;
-        overflow-y: auto;
-        background: #ffffff;
-    }
+  /* Open state */
+  .nav--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
 
-    .nav--open {
-        transform: translateX(0);
-    }
+  /* ---- Hero background inside the card ---- */
+  .nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('./hero abnner.png') center/cover no-repeat;
+    opacity: 0.08;
+    border-radius: 32px;
+    z-index: 0;
+    pointer-events: none;
+  }
 
-    /* Logo inside menu (hidden on desktop, shown here) */
-    .nav .logo {
-        display: flex !important;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #1e2b3c;
-        padding-bottom: 1.2rem;
-        margin-bottom: 0.8rem;
-        border-bottom: 2px solid #f0edea;
-        align-items: center;
-        gap: 0.5rem;
-    }
+  /* All content sits above the pseudo background */
+  .nav__list,
+  .nav__cta,
+  .nav__close {
+    position: relative;
+    z-index: 1;
+  }
 
-    .nav .logo i {
-        color: #d4a373;
-    }
+  /* ---- Close button (top‑right) ---- */
+  .nav__close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #1e2b3c;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    line-height: 1;
+    transition: transform 0.2s, color 0.2s;
+    z-index: 2;
+  }
+  .nav__close:hover {
+    transform: rotate(90deg);
+    color: #d4a373;
+  }
 
-    /* Nav list – clean, spaced */
-    .nav__list {
-        flex-direction: column;
-        gap: 0.4rem;
-        text-align: left;
-        width: 100%;
-        padding: 0;
-        margin: 0 0 1.5rem;
-        list-style: none;
-    }
+  /* ---- Nav list (popup links) ---- */
+  .nav__list {
+    flex-direction: column;
+    gap: 0.3rem;
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  .nav__list li {
+    width: 100%;
+  }
+  .nav__list a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #1e2b3c;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .nav__list a i {
+    width: 1.8rem;
+    color: #d4a373;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .nav__list a:hover {
+    color: #d4a373;
+    padding-left: 0.8rem;
+  }
 
-    .nav__list li {
-        width: 100%;
-    }
+  /* ---- CTA button inside popup ---- */
+  .nav__cta {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.9rem !important;
+    font-size: 1.1rem !important;
+    background: #d4a373;
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .nav__cta:hover {
+    background: #c08a5e;
+  }
 
-    .nav__list a {
-        font-size: 1.1rem;
-        font-weight: 500;
-        padding: 0.75rem 0;
-        display: flex;
-        align-items: center;
-        gap: 0.9rem;
-        color: #1e2b3c;
-        border-bottom: 1px solid #f5f3f1;
-        transition: color 0.2s ease, padding-left 0.2s ease;
-        width: 100%;
-    }
+  /* ---- Hide the logo that was inside nav (if any) ---- */
+  .nav .logo {
+    display: none !important;
+  }
 
-    .nav__list a:hover {
-        color: #d4a373;
-        padding-left: 0.3rem;
-    }
-
-    .nav__list a i {
-        width: 1.6rem;
-        color: #d4a373;
-        font-size: 1.1rem;
-        text-align: center;
-    }
-
-    /* Active link highlight */
-    .nav__list a.nav__link--active {
-        color: #d4a373;
-        font-weight: 600;
-    }
-
-    .nav__list a.nav__link--active i {
-        color: #d4a373;
-    }
-
-    /* CTA button inside menu */
-    .nav__cta {
-        display: block !important;
-        width: 100%;
-        text-align: center;
-        margin-top: 0.3rem;
-        padding: 0.85rem !important;
-        font-size: 1rem !important;
-        background: #d4a373;
-        color: #fff;
-        border-radius: 50px;
-        border: none;
-        font-weight: 600;
-    }
-
-    .nav__cta:hover {
-        background: #c08a5e;
-    }
-
+  /* ---- Hamburger stays in header (no change needed) ---- */
+  /* The hamburger is already in the header, so we keep its default styles */
+}
     /* Small footer inside menu (optional) */
     .nav__footer {
         margin-top: auto;
