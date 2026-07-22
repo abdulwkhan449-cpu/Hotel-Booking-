@@ -1027,7 +1027,7 @@ img {
 }
 
 /* ============================================================
-   RESPONSIVE – MOBILE POPUP MODAL + HERO IMPROVEMENTS
+   RESPONSIVE – MOBILE POPUP MODAL + HERO CENTERED
    ============================================================ */
 @media (max-width: 768px) {
   /* ---- Hamburger ---- */
@@ -1157,7 +1157,7 @@ img {
     background: #c08a5e;
   }
 
-  /* ---- HERO – MOBILE IMPROVEMENTS ---- */
+  /* ---- HERO – MOBILE CENTERED ---- */
   .hero {
     min-height: 90vh;
     align-items: center;
@@ -1168,6 +1168,7 @@ img {
   .hero__text {
     max-width: 100%;
     text-align: center;
+    margin: 0 auto;          /* centered block */
     padding: 0 0.5rem;
   }
   .hero__title {
@@ -1189,15 +1190,15 @@ img {
   .hero__description {
     font-size: 1rem;
     max-width: 100%;
-    margin: 0 auto 1.8rem;
+    margin: 0 auto 1.8rem;   /* centered */
     line-height: 1.6;
     padding: 0 0.5rem;
   }
   .hero__cta {
     display: inline-block;
+    margin: 0 auto 2rem;     /* centered */
     padding: 0.9rem 2.8rem;
     font-size: 1.1rem;
-    margin-bottom: 2rem;
   }
   .hero__badges {
     justify-content: center;
@@ -1214,7 +1215,7 @@ img {
     font-size: 0.9rem;
   }
 
-  /* ---- Other responsive adjustments (unchanged) ---- */
+  /* ---- Other responsive adjustments ---- */
   .booking-card { padding: 1.8rem 1.5rem; }
   .booking-card .booking-form { flex-direction: column; align-items: stretch; }
   .booking-card .booking-form button { flex: 1 1 auto; }
@@ -1242,6 +1243,10 @@ img {
   .hero {
     min-height: 85vh;
   }
+  .hero__text {
+    margin: 0 auto;
+    padding: 0 0.3rem;
+  }
   .hero__title {
     font-size: 2.2rem;
     letter-spacing: 1px;
@@ -1254,10 +1259,12 @@ img {
   }
   .hero__description {
     font-size: 0.95rem;
+    margin: 0 auto 1.5rem;
   }
   .hero__cta {
     padding: 0.8rem 2.2rem;
     font-size: 1rem;
+    margin: 0 auto 1.8rem;
   }
   .hero__badges {
     gap: 0.6rem;
