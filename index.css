@@ -183,7 +183,7 @@ img {
 /* ===== HERO – EXACT IMAGE STYLE ===== */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   color: #fff;
