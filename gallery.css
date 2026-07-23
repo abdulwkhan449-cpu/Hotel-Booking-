@@ -1,0 +1,122 @@
+/* ===== GALLERY PAGE SPECIFIC STYLES ===== */
+
+/* ---- Hero - NO MARGIN ---- */
+.gallery-hero {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: url('./hero abnner.png') center/cover no-repeat;
+  background-attachment: fixed;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.gallery-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
+}
+.gallery-hero .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.gallery-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.gallery-hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---- Gallery Grid ---- */
+.gallery-grid {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+.gallery-grid__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.gallery-grid__item {
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.gallery-grid__item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.gallery-grid__item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.gallery-grid__item:hover img {
+  transform: scale(1.05);
+}
+
+/* ---- Active nav link ---- */
+.nav__list a.active {
+  color: #d4a373;
+  font-weight: 600;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .gallery-hero {
+    min-height: 30vh;
+    background-attachment: scroll;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .gallery-hero h1 {
+    font-size: 2.5rem;
+  }
+  .gallery-hero p {
+    font-size: 1.1rem;
+  }
+  .gallery-grid__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .gallery-grid__item img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-hero {
+    min-height: 25vh;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .gallery-hero h1 {
+    font-size: 2rem;
+  }
+  .gallery-hero p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  .gallery-grid__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  .gallery-grid__item img {
+    height: 140px;
+  }
+}
