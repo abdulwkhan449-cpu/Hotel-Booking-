@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Hotel · Attractions</title>
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Shared global styles -->
+  <link rel="stylesheet" href="index.css" />
+  <!-- Page‑specific styles -->
+  <link rel="stylesheet" href="attractions.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="./index.html" class="logo">
+        <i class="fas fa-hotel"></i> Grand Hotel
+      </a>
+      <nav class="nav" id="mainNav">
+        <ul class="nav__list">
+          <li><a href="./rooms.html"><i class="fas fa-door-open"></i> Rooms</a></li>
+          <li><a href="./dining.html"><i class="fas fa-utensils"></i> Dining</a></li>
+          <li><a href="./offers.html"><i class="fas fa-tags"></i> Offers</a></li>
+          <li><a href="./attractions.html" class="active"><i class="fas fa-map-marked-alt"></i> Attractions</a></li>
+          <li><a href="./gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+          <li><a href="./contact.html"><i class="fas fa-star"></i>Contact</a></li>
+        </ul>
+        <a href="#booking" class="btn btn--primary nav__cta"><i class="fas fa-calendar-check"></i> Book Now</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- ===== ATTRACTIONS HERO ===== -->
+  <section class="attractions-hero">
+    <div class="container">
+      <h1>Nearby Attractions</h1>
+      <p>Discover the best of the city, just steps away from our hotel.</p>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED ATTRACTION ===== -->
+  <section class="section featured-attraction">
+    <div class="container">
+      <div class="featured-attraction__inner">
+        <div class="featured-attraction__image">
+          <img src="./gallery1.png" alt="Central Park" />
+        </div>
+        <div class="featured-attraction__content">
+          <span class="featured-attraction__badge">Must‑See</span>
+          <h2>Central Park</h2>
+          <p>
+            Escape the city bustle and unwind in the heart of nature. Central Park offers
+            scenic walking trails, lush gardens, and serene lakes – perfect for a morning jog
+            or a romantic picnic.
+          </p>
+          <ul class="featured-attraction__highlights">
+            <li><i class="fas fa-tree"></i> 500m from hotel</li>
+            <li><i class="fas fa-walking"></i> 10‑minute walk</li>
+            <li><i class="fas fa-clock"></i> Open daily 6 AM – 10 PM</li>
+            <li><i class="fas fa-ticket-alt"></i> Free entry</li>
+          </ul>
+          <a href="#" class="btn btn--accent"><i class="fas fa-directions"></i> Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ATTRACTIONS GRID ===== -->
+  <section class="section attractions-grid" style="background: #f8f6f4;">
+    <div class="container">
+      <h2 class="section__title">Explore More</h2>
+      <p class="section__subtitle">Your adventure starts here.</p>
+      <div class="attractions__grid">
+
+        <!-- Attraction 1: City Museum -->
+        <div class="attraction-card">
+          <i class="fas fa-landmark"></i>
+          <h3>City Museum</h3>
+          <p>Discover art, history, and interactive exhibits.</p>
+          <div class="attraction-card__details">
+            <span><i class="fas fa-map-pin"></i> 1.2 km</span>
+            <span><i class="fas fa-walking"></i> 15 min</span>
+            <span><i class="fas fa-ticket-alt"></i> PKR 500</span>
+          </div>
+          <a href="#" class="btn btn--outline">Learn More</a>
+        </div>
+
+        <!-- Attraction 2: Grand Bazaar -->
+        <div class="attraction-card attraction-card--featured">
+          <i class="fas fa-store"></i>
+          <h3>Grand Bazaar</h3>
+          <p>Shopping, souvenirs, and local street food.</p>
+          <div class="attraction-card__details">
+            <span><i class="fas fa-map-pin"></i> 800 m</span>
+            <span><i class="fas fa-walking"></i> 10 min</span>
+            <span><i class="fas fa-clock"></i> 10 AM – 10 PM</span>
+          </div>
+          <a href="#" class="btn btn--accent">Explore</a>
+        </div>
+
+        <!-- Attraction 3: Sunset Beach -->
+        <div class="attraction-card">
+          <i class="fas fa-umbrella-beach"></i>
+          <h3>Sunset Beach</h3>
+          <p>Golden sands and breathtaking ocean views.</p>
+          <div class="attraction-card__details">
+            <span><i class="fas fa-map-pin"></i> 3 km</span>
+            <span><i class="fas fa-car"></i> 10 min drive</span>
+            <span><i class="fas fa-ticket-alt"></i> Free</span>
+          </div>
+          <a href="#" class="btn btn--outline">View</a>
+        </div>
+
+        <!-- Attraction 4: Botanical Gardens -->
+        <div class="attraction-card">
+          <i class="fas fa-seedling"></i>
+          <h3>Botanical Gardens</h3>
+          <p>Exotic plants, butterfly house, and tranquil ponds.</p>
+          <div class="attraction-card__details">
+            <span><i class="fas fa-map-pin"></i> 2.5 km</span>
+            <span><i class="fas fa-walking"></i> 30 min</span>
+            <span><i class="fas fa-ticket-alt"></i> PKR 300</span>
+          </div>
+          <a href="#" class="btn btn--outline">Visit</a>
+        </div>
+
+        <!-- Attraction 5: Art Gallery -->
+        <div class="attraction-card">
+          <i class="fas fa-palette"></i>
+          <h3>Art Gallery</h3>
+          <p>Contemporary art exhibitions and local artists.</p>
+          <div class="attraction-card__details">
+            <span><i class="fas fa-map-pin"></i> 1.8 km</span>
+            <span><i class="fas fa-walking"></i> 20 min</span>
+            <span><i class="fas fa-ticket-alt"></i> PKR 200</span>
+          </div>
+          <a href="#" class="btn btn--outline">Explore</a>
+        </div>
+
+        <!-- Attraction 6: Theme Park -->
+        <div class="attraction-card">
+          <i class="fas fa-roller-coaster"></i>
+          <h3>Adventure Park</h3>
+          <p>Thrilling rides, games, and family fun.</p>
+          <div class="attraction-card__details">
+            <span><i class="fas fa-map-pin"></i> 5 km</span>
+            <span><i class="fas fa-car"></i> 15 min drive</span>
+            <span><i class="fas fa-ticket-alt"></i> PKR 1,500</span>
+          </div>
+          <a href="#" class="btn btn--outline">Book Tickets</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <h3><i class="fas fa-hotel"></i> Grand Hotel</h3>
+        <p><i class="fas fa-map-pin"></i> 123 Luxury Avenue, Downtown, City 10001</p>
+        <p><i class="fas fa-phone"></i> +1 (555) 123‑4567</p>
+        <p><i class="fas fa-envelope"></i> info@grandhotel.com</p>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="./rooms.html"><i class="fas fa-chevron-right"></i> Rooms</a></li>
+          <li><a href="./dining.html"><i class="fas fa-chevron-right"></i> Dining</a></li>
+          <li><a href="./offers.html"><i class="fas fa-chevron-right"></i> Offers</a></li>
+          <li><a href="./attractions.html"><i class="fas fa-chevron-right"></i> Attractions</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Follow Us</h4>
+        <div class="footer__social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="footer__copy">&copy; 2026 Grand Hotel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- ===== STICKY MOBILE CTA ===== -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#booking" class="btn btn--accent"><i class="fas fa-calendar-check"></i> Book Now</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+  <script src="attractions.js"></script>
+</body>
+</html>
