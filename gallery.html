@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Hotel · Gallery</title>
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Shared global styles -->
+  <link rel="stylesheet" href="index.css" />
+  <!-- Page‑specific styles -->
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="./index.html" class="logo">
+        <i class="fas fa-hotel"></i> Grand Hotel
+      </a>
+      <nav class="nav" id="mainNav">
+        <ul class="nav__list">
+          <li><a href="./rooms.html"><i class="fas fa-door-open"></i> Rooms</a></li>
+          <li><a href="./dining.html"><i class="fas fa-utensils"></i> Dining</a></li>
+          <li><a href="./offers.html"><i class="fas fa-tags"></i> Offers</a></li>
+          <li><a href="./attractions.html"><i class="fas fa-map-marked-alt"></i> Attractions</a></li>
+          <li><a href="./gallery.html" class="active"><i class="fas fa-images"></i> Gallery</a></li>
+          <li><a href="./contact.html"><i class="fas fa-star"></i>Contact</a></li>
+        </ul>
+        <a href="#booking" class="btn btn--primary nav__cta"><i class="fas fa-calendar-check"></i> Book Now</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- ===== GALLERY HERO ===== -->
+  <section class="gallery-hero">
+    <div class="container">
+      <h1>Our Gallery</h1>
+      <p>Take a peek inside our hotel – every corner tells a story.</p>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY GRID ===== -->
+  <section class="section gallery-grid">
+    <div class="container">
+      <div class="gallery-grid__inner">
+        <!-- Gallery items – using data-img for lightbox -->
+        <div class="gallery-grid__item" data-img="gallery1.png">
+          <img src="gallery1.png" alt="Lobby" />
+        </div>
+        <div class="gallery-grid__item" data-img="gallery2.png">
+          <img src="gallery2.png" alt="Pool" />
+        </div>
+        <div class="gallery-grid__item" data-img="gLLERY3.png">
+          <img src="gLLERY3.png" alt="Restaurant" />
+        </div>
+        <div class="gallery-grid__item" data-img="GALLERY4.png">
+          <img src="GALLERY4.png" alt="Spa" />
+        </div>
+        <div class="gallery-grid__item" data-img="GALLERY5.png">
+          <img src="GALLERY5.png" alt="Conference" />
+        </div>
+        <div class="gallery-grid__item" data-img="GALLERY6.png">
+          <img src="GALLERY6.png" alt="Gym" />
+        </div>
+        <div class="gallery-grid__item" data-img="GALLERY7.png">
+          <img src="GALLERY7.png" alt="Gym" />
+        </div>
+        <div class="gallery-grid__item" data-img="GALLERY8.png">
+          <img src="GALLERY8.png" alt="Gym" />
+        </div>
+        <div class="gallery-grid__item" data-img="GALLEY9.png">
+          <img src="GALLEY9.png" alt="Gym" />
+        </div>
+        <div class="gallery-grid__item" data-img="GALLERY10.png">
+          <img src="GALLERY10.png" alt="Gym" />
+        </div>
+        <!-- Additional images for a richer gallery -->
+        <div class="gallery-grid__item" data-img="room12.png">
+          <img src="room12.png" alt="Deluxe Suite" />
+        </div>
+        <div class="gallery-grid__item" data-img="room2.png">
+          <img src="room2.png" alt="Family Room" />
+        </div>
+        <div class="gallery-grid__item" data-img="room3.png">
+          <img src="room3.png" alt="Penthouse" />
+        </div>
+        <div class="gallery-grid__item" data-img="dinning1.png">
+          <img src="dinning1.png" alt="Dining" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX (reused from home page) ===== -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox__close" id="lightboxClose">&times;</span>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="Enlarged" />
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <h3><i class="fas fa-hotel"></i> Grand Hotel</h3>
+        <p><i class="fas fa-map-pin"></i> 123 Luxury Avenue, Downtown, City 10001</p>
+        <p><i class="fas fa-phone"></i> +1 (555) 123‑4567</p>
+        <p><i class="fas fa-envelope"></i> info@grandhotel.com</p>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="./rooms.html"><i class="fas fa-chevron-right"></i> Rooms</a></li>
+          <li><a href="./dining.html"><i class="fas fa-chevron-right"></i> Dining</a></li>
+          <li><a href="./offers.html"><i class="fas fa-chevron-right"></i> Offers</a></li>
+          <li><a href="./attractions.html"><i class="fas fa-chevron-right"></i> Attractions</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Follow Us</h4>
+        <div class="footer__social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="footer__copy">&copy; 2026 Grand Hotel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- ===== STICKY MOBILE CTA ===== -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#booking" class="btn btn--accent"><i class="fas fa-calendar-check"></i> Book Now</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
