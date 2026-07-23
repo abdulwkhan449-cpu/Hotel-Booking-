@@ -10,7 +10,7 @@
   background: url('./hero abnner.png') center/cover no-repeat;
   background-attachment: fixed;
   margin-top: 0px;      /* consistent with rooms page */
-  margin-bottom: 50px;   /* consistent with rooms page */
+  margin-bottom: 30px;   /* consistent with rooms page */
 }
 .attractions-hero::before {
   content: '';
